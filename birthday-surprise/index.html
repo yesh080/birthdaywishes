@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Special Birthday Surprise ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-heart">❤️</div>
+    </div>
+
+    <!-- Countdown Screen (Before Feb 1st) -->
+    <div id="countdown-screen" class="countdown-screen hidden">
+        <div class="countdown-container">
+            <h1 class="countdown-title">Something Special is Coming...</h1>
+            <div class="countdown-timer">
+                <div class="time-block">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="time-block">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="time-block">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+            <p class="countdown-subtitle">Until your special moment arrives ✨</p>
+        </div>
+        <div class="floating-hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">💕</div>
+            <div class="heart">💖</div>
+            <div class="heart">💗</div>
+            <div class="heart">💝</div>
+        </div>
+    </div>
+
+    <!-- Birthday Celebration Screen -->
+    <div id="birthday-screen" class="birthday-screen hidden">
+        <!-- Sound Control -->
+        <div class="sound-control">
+            <button id="mute-btn" class="mute-btn">🔊</button>
+        </div>
+
+        <!-- Birthday Banner -->
+        <section class="birthday-banner">
+            <h1 class="birthday-title hidden">🎂 Happy Birthday Sister! ❤️</h1>
+            <p class="birthday-subtitle hidden">You deserve the world today!</p>
+            <div class="confetti-container"></div>
+        </section>
+
+        <!-- Love Letter Section -->
+        <section class="love-letter-section">
+            <div class="envelope" id="envelope">
+                <div class="envelope-front">
+                    <div class="envelope-flap"></div>
+                    <div class="heart-seal">💝</div>
+                </div>
+                <div class="letter hidden" id="letter">
+                    <h3>My Dearest Sister,</h3>
+                    <p>On this special day, I want you to know how much you mean to me...</p>
+                    <p>Every moment with you growing up has been a treasure, your laughter still lights up my world...</p>
+                    <p>Thank you for being the best sister anyone could ask for!</p>
+                    <p>Happy Birthday to my amazing sister! ❤️</p>
+                </div>
+            </div>
+            <p class="section-hint">Click the envelope to open your letter</p>
+        </section>
+
+        <!-- Photo Memories Gallery -->
+        <section class="memories-section">
+            <h2 class="section-title">Our Beautiful Memories 💕</h2>
+            <div class="photo-gallery">
+                <div class="photo-card" data-photo="1">
+                    <div class="photo-front">
+                        <img src="images/photo1.jpeg" alt="Memory 1" />
+                    <div class="photo-caption">Childhood Memories</div>
+                </div>
+                <div class="photo-back">
+                    <p>Remember all our silly games and adventures growing up...</p>
+                </div>
+            </div>
+            <div class="photo-card" data-photo="2">
+                <div class="photo-front">
+                    <img src="images/phot2.jpg" alt="Memory 2" />
+                    <div class="photo-caption">Sister Bond</div>
+                </div>
+                <div class="photo-back">
+                    <p>No matter what happens, you'll always be my favorite person to talk to...</p>
+                </div>
+            </div>
+            <div class="photo-card" data-photo="3">
+                <div class="photo-front">
+                    <img src="images/photo3.jpeg" alt="Memory 3" />
+                    <div class="photo-caption">Growing Together</div>
+                </div>
+                <div class="photo-back">
+                    <p>Watching you grow has been the greatest privilege of my life...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scratch to Reveal Section -->
+        <section class="scratch-section">
+            <h2 class="section-title">Scratch to Reveal My Secret Message 💋</h2>
+            <div class="scratch-container">
+                <canvas id="scratch-canvas" width="300" height="100"></canvas>
+                <div class="scratch-message hidden">
+                    <h3>You are my everything!</h3>
+                </div>
+            </div>
+            <p class="section-hint">Use your finger or mouse to scratch the surface</p>
+        </section>
+
+        <!-- Memory Quiz Section -->
+        <section class="quiz-section">
+            <h2 class="section-title">Test Our Love Knowledge 💕</h2>
+            <div class="quiz-container">
+                <div class="question" data-question="1">
+                    <h3>What's our favorite childhood game?</h3>
+                    <div class="options">
+                        <button class="option" data-answer="wrong">Hide and Seek</button>
+                        <button class="option" data-answer="correct">Board Games</button>
+                        <button class="option" data-answer="wrong">Tag</button>
+                    </div>
+                </div>
+                <div class="question hidden" data-question="2">
+                    <h3>What makes you the best sister?</h3>
+                    <div class="options">
+                        <button class="option" data-answer="wrong">Your cooking</button>
+                        <button class="option" data-answer="correct">Your kindness</button>
+                        <button class="option" data-answer="wrong">Your jokes</button>
+                    </div>
+                </div>
+                <div class="quiz-progress">Question <span id="current-question">1</span> of <span id="total-questions">2</span></div>
+            </div>
+        </section>
+
+        <!-- Final Wish Section -->
+        <section class="wish-section">
+            <div class="wish-container">
+                <h2 class="wish-title">My Birthday Wish for You 🌟</h2>
+                <div class="wish-text">
+                    <p class="wish-line hidden">May your days be filled with endless joy...</p>
+                    <p class="wish-line hidden">May your dreams take flight and soar high...</p>
+                    <p class="wish-line hidden">May you always feel loved and cherished...</p>
+                    <p class="wish-line hidden">Because you deserve all the happiness in the world...</p>
+                    <p class="wish-final hidden">Happy Birthday, dear sister! You are my greatest blessing! ❤️</p>
+                </div>
+                <div class="floating-hearts-wish"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "birthday-surprise",
+  "version": "1.0.0",
+  "description": "A magical birthday surprise website for my sister",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'No build step needed for static site'"
+  },
+  "keywords": ["birthday", "surprise", "sister", "interactive"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
